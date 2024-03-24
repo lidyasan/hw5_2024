@@ -1,0 +1,297 @@
+/*default view (mobile view)*/
+#logo {
+    animation: logoAnimation 5s;
+}
+
+/*Animate the logo with keyframes.*/
+@keyframes logoAnimation {
+    from {
+        width: 25px;
+        opacity: 0;
+    }
+
+    to {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+/*background image, backup color, and font */
+body {
+    font-family: "Poppins", serif;
+    background-color: #f1f1f1;
+    background-image: url("/images/concrete_seamless.png");
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*navigation bar at the top*/
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+a:visited {
+    color: #0000FF;
+}
+
+a:visited {
+    color: #0000FF;
+}
+
+/*.card class flex */
+.card>header {
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    flex-basis: 450px;
+    background-color: #288088;
+    border: 2px solid #45adad;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.card>ul {
+    /* display: flex;
+    flex-wrap: wrap; */
+    flex-basis: 450px;
+}
+
+.card>button {
+    margin-right: 25px;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* width: 450px; */
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 450px;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/*.pricing flex*/
+#pricing {
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px 50px 0px 0px;
+}
+
+/*.gallery flex box*/
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    margin: 10px;
+    width: 300px;
+    border: 10px solid #50C7C7;
+}
+
+/*screen size 900px minimum*/
+@media screen and (min-width: 900px) {
+
+    /*navigation bar sticks to the top*/
+    body>header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+
+    /*shifting logo to the left*/
+    #logo {
+        justify-content: center;
+        top: 0;
+    }
+
+    /*shifting navigation to the right*/
+    nav {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: right;
+    }
+
+    .nav_links>header {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+    }
+
+    /*shifting logo to the left*/
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .about>header {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+
+    }
+
+    /*changing .card initial size*/
+    .card>header {
+        flex-basis: 275px;
+        background-color: #288088;
+        border: 2px solid #45adad;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
+
+    .card>ul {
+        flex-basis: 275px;
+    }
+
+    .card>button {
+        margin-right: 25px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* width: 450px; */
+    }
+
+    .card {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 275px;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
+}
+
+
+
+/*prefers reduced motion*/
+@media screen and (prefers-reduced-motion: reduce) {
+
+    /*taking away logo animation*/
+    #logo {
+        animation: logoAnimation none;
+    }
+}
+
+/*printing to portait mode*/
+@media print {
+
+    /*changing the printing page to portrait view*/
+    @page {
+        size: portrait
+    }
+
+    /*changing the font to Arial with Helvetica as backup*/
+    body {
+        font-family: Arial, Helvetica;
+        background-color: #f1f1f1;
+    }
+
+    /*changing location of the nav to center*/
+    .nav {
+        justify-content: center;
+    }
+
+    .nav_item a {
+        margin: 100px;
+        padding: 10px;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /*changing the pricing to align at the bottom*/
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        list-style: none;
+    }
+
+    /*changing list item to have a thumbs up*/
+    .pricing li:nth-child(3n+2)::after {
+        content: "👍";
+    }
+
+    /*changing the .card to adjust to the page size*/
+    .card>header {
+        flex-basis: 220px;
+        background-color: #288088;
+        border: 2px solid #45adad;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
+
+    .card>ul {
+        flex-basis: 220px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 220px;
+        justify-content: center;
+        align-items: center;
+        align-items: baseline;
+        border: 2px solid #45adad;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
+
+    /*changing the gallery to display nothing on print*/
+    .gallery {
+        display: none;
+    }
+
+    #gallery {
+        display: none;
+    }
+
+}
